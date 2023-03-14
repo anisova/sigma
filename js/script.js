@@ -37,3 +37,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 Inputmask({"mask": "+7 999 999-99-99"}).mask(document.querySelector('.input-phone'));
+
+function scrollTo() {
+    const anchors = document.querySelectorAll("a.scrollto");
+    anchors.forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();        
+        const blockID = anchor.getAttribute("href");
+        document.querySelector(blockID).scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      });
+    });
+  }
+
+  scrollTo();
